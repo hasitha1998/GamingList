@@ -7,6 +7,10 @@ const axiosCreate = axios.create({
 })
 
 const getGenreList=axiosCreate.get('/genres?key='+key);
+const getAllGames=axiosCreate.get('/games?key='+key);
+const getGameListByGenresId=(id)=>axiosCreate.get('/games?key='+key+'&genres='+id);
 export default{
-    getGenreList
+    getGenreList,
+    getAllGames,
+    getGameListByGenresId
 }
